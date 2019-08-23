@@ -41,6 +41,7 @@
          <style type="text/css">
             .cardBox 
             {
+                background: white;
                 position: relative;
                 text-align: center;
                 margin-left: auto;
@@ -50,13 +51,13 @@
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
                 padding: 20px;
                 padding-bottom: 50px;
+    
             }
             .boxText
             {
                 font: .8em Arial, Tahoma, Verdana;
                 background: #fff url(../images/bg.gif) repeat-x; 
                 color: black;
-
                 text-align: left;
             }
             .loginBar
@@ -64,7 +65,7 @@
                 border:1px solid gray;
                 border-radius:5px;
                 background:transparent;
-                color:white;
+                color:black;
                 width:345px;
                 height:30px;
                 top:0;
