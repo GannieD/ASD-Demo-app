@@ -131,12 +131,13 @@
                 <p id="tipText">You can sign in using your Hotelgo account to access our services.</p>
                 <p>Email address</p>
                 <form id="signForm" action="ConnServlet" method="post" style="position:relative; top:-18px;">
-                <input id="forwardType" value="register" style="display:none">
+                
                 <input class="loginBar" id="username">
                 <p>Password</p>
                 <input class="loginBar" id="firstPw">
                 <p id="confirmText" style="display:none;">Confirm Password</p>
                 <input id="confirmInput" id="confirmPw" style="display:none" class="loginBar">
+                <input id="forwardType" value="register" style="display:none">
                 </form>
                 </div>
                    <button class="signInBtn" onclick="signBtnAction()"><span id="btnText"class="text">Sign in</span></button>
