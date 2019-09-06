@@ -37,6 +37,31 @@
                 
             }
             
+            function signBtnAction()
+            {
+                
+                if(inSignUp == false)
+                {
+                   
+                }
+                else
+                {
+                    $("#signForm").submit();
+                    
+                    var firstPw = document.getElementById("firstPw").value.toString()
+                    var confirmPw =  document.getElementById("confirmPw").value.toString()
+                    
+                    if(firstPw != confirmPw)
+                    {
+                        alert("Please confirm your password ")
+                    }
+                    else
+                    {
+                        
+                    }
+                }
+            }
+
         </script>    
          <style type="text/css">
             .cardBox 
@@ -98,20 +123,23 @@
         String emptyErr = request.getParameter("empty");
     %>
     
-    <body>
+    <body background="bg.png">
         <div style="text-align: center">
-            <div class="cardBox">
+            <div class="cardBox" style="top:100px;">
                 <div class="boxText">
                 <h1 id="signInText">Sign in</h1>
                 <p id="tipText">You can sign in using your Hotelgo account to access our services.</p>
                 <p>Email address</p>
-                <input class="loginBar">
+                <form id="signForm" action="ConnServlet" method="post" style="position:relative; top:-18px;">
+                <input id="forwardType" value="register" style="display:none">
+                <input class="loginBar" id="username">
                 <p>Password</p>
-                <input class="loginBar">
+                <input class="loginBar" id="firstPw">
                 <p id="confirmText" style="display:none;">Confirm Password</p>
-                <input id="confirmInput" style="display:none" class="loginBar">
+                <input id="confirmInput" id="confirmPw" style="display:none" class="loginBar">
+                </form>
                 </div>
-                   <button class="signInBtn"><span id="btnText"class="text">Sign in</span></button>
+                   <button class="signInBtn" onclick="signBtnAction()"><span id="btnText"class="text">Sign in</span></button>
                    <p id="registerText" class="boxText" style="position: relative; float: top; top: 30px; text-align: center;" >Don't have an account yet? <span style="cursor: pointer; color: #c5464a;" onclick="signUpBtnAction()"><b>Sign up</b></span></p>
             </div>
         </div>

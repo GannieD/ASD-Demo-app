@@ -21,18 +21,20 @@ public class ConnServlet extends HttpServlet {
     @Override 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String forwardType = (String)request.getParameter("forwardType");
+        System.out.println(forwardType);
         String adminemail = request.getParameter("adminemail");
         String adminpass = request.getParameter("adminpassword");
         connector = new MongoDBConnector(adminemail, adminpass);        
         response.setContentType("text/html;charset=UTF-8");  
         HttpSession session = request.getSession();              
         String status = (connector != null) ? "Connected to mLab" : "Disconnected from mLab";        
-        
+        System.out.println(status);
         session.setAttribute("status", status); 
         session.setAttribute("adminemail", adminemail);
         session.setAttribute("adminpassword", adminpass);
           
-        RequestDispatcher rs = request.getRequestDispatcher("index.jsp");
+        RequestDispatcher rs = request.getRequestDispatcher("login.jsp");
         rs.forward(request, response);
     }    
   
